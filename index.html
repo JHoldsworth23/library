@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Library</title>
+        <script src="script.js" defer></script>
     </head>
 
     <body>
-        <form action="" method="post">
+        <form>
             <label for="title">What is the title of the book?</label>
             <input type="text" name="title" id="title" required>
             <label for="author">Who is the author of the book?</label>
@@ -16,7 +17,7 @@
             <input type="number" name="pages" id="pages" min="1" max="2000" required>
             <input type="checkbox" name="read" id="read">
             <label for="read">I have already read this book!</label>
-            <button type="button">ADD A NEW BOOK</button>
+            <button type="submit">ADD A NEW BOOK</button>
         </form>
     </body>
 </html>
