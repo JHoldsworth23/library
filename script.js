@@ -43,5 +43,6 @@ showForm.addEventListener('click', () => {
 });
 
 cancelBtn.addEventListener('click', () => {
+    form.reset();
     dialog.close();
 })
