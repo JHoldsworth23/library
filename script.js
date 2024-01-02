@@ -37,11 +37,11 @@ submitBtn.addEventListener('click', getBookInfo);
 
 const dialog = document.querySelector('dialog');
 const showForm = document.querySelector('#add-book');
-const closeModal = document.querySelector('#close-btn');
+const cancelBtn = document.querySelector('#cancel-btn');
 showForm.addEventListener('click', () => {
     dialog.showModal();
 });
 
-closeModal.addEventListener('click', () => {
+cancelBtn.addEventListener('click', () => {
     dialog.close();
 })
