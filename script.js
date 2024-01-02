@@ -12,24 +12,24 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-function clearForm() {
-    const allInputs = document.querySelectorAll('input');
-    allInputs.forEach(input => console.log(input));
+function validateForm(input) {
+    return input.checkValidity();
 }
 
 function getBookInfo(event) {
-    event.preventDefault();
     const bookTitle = document.querySelector('#title');
     const bookAuthor = document.querySelector('#author');
     const bookPages = document.querySelector('#pages');
     const bookRead = document.querySelector('input[type*="box"]');
 
-    if (form.checkValidity()) {
+    let allInputs = [bookTitle, bookAuthor, bookPages, bookRead];
+    if (allInputs.every(validateForm)) {
         addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked);
-        clearForm();
+        form.reset();
+        event.preventDefault();
     }
 }
 
-const submitBtn = document.querySelector('button');
+const submitBtn = document.querySelector('#submit-btn');
 const form = document.querySelector('form');
 submitBtn.addEventListener('click', getBookInfo);
