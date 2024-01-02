@@ -12,8 +12,7 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-const submitBtn = document.querySelector('button');
-submitBtn.addEventListener('click', (event) => {
+function getBookInfo(event) {
     event.preventDefault();
     const bookTitle = document.querySelector('#title');
     const bookAuthor = document.querySelector('#author');
@@ -21,4 +20,7 @@ submitBtn.addEventListener('click', (event) => {
     const bookRead = document.querySelector('input[type*="box"]');
 
     addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
-});
+}
+
+const submitBtn = document.querySelector('button');
+submitBtn.addEventListener('click', getBookInfo);
