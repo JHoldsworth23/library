@@ -26,6 +26,7 @@ function getBookInfo(event) {
     if (allInputs.every(validateForm)) {
         addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked);
         form.reset();
+        dialog.close();
         event.preventDefault();
     }
 }
@@ -33,3 +34,14 @@ function getBookInfo(event) {
 const submitBtn = document.querySelector('#submit-btn');
 const form = document.querySelector('form');
 submitBtn.addEventListener('click', getBookInfo);
+
+const dialog = document.querySelector('dialog');
+const showForm = document.querySelector('#add-book');
+const closeModal = document.querySelector('#close-btn');
+showForm.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeModal.addEventListener('click', () => {
+    dialog.close();
+})
