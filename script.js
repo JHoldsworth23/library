@@ -34,6 +34,7 @@ function displayBook() {
     if (myLibrary.length !== 0) {
         myLibrary.forEach(book => {
             const div = document.createElement('div');
+            div.classList.add('grid-item');
             div.innerHTML = `
                 <p>${book.title.toUpperCase()}</p>
                 <p>${capitalize(book.author)}</p>
