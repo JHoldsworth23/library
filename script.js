@@ -1,4 +1,21 @@
 const myLibrary = [];
+const submitBtn = document.querySelector('#submit-btn');
+const form = document.querySelector('form');
+const dialog = document.querySelector('dialog');
+const showForm = document.querySelector('#add-book');
+const cancelBtn = document.querySelector('#cancel-btn');
+const grid = document.querySelector('.grid-container');
+
+submitBtn.addEventListener('click', getBookInfo);
+
+showForm.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+cancelBtn.addEventListener('click', () => {
+    form.reset();
+    dialog.close();
+})
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -62,21 +79,3 @@ function getBookInfo(event) {
         displayBook();
     }
 }
-
-const submitBtn = document.querySelector('#submit-btn');
-const form = document.querySelector('form');
-submitBtn.addEventListener('click', getBookInfo);
-
-const dialog = document.querySelector('dialog');
-const showForm = document.querySelector('#add-book');
-const cancelBtn = document.querySelector('#cancel-btn');
-showForm.addEventListener('click', () => {
-    dialog.showModal();
-});
-
-cancelBtn.addEventListener('click', () => {
-    form.reset();
-    dialog.close();
-})
-
-const grid = document.querySelector('.grid-container');
