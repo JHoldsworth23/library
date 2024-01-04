@@ -18,8 +18,8 @@ function displayBook() {
         myLibrary.forEach(book => {
             const div = document.createElement('div');
             div.innerHTML = `
-                <p>${book.title}</p>
-                <p>${book.author}</p>
+                <p>${book.title.toUpperCase()}</p>
+                <p>${capitalize(book.author)}</p>
                 <p>${book.pages} pages</p>
                 <button class="read">${book.read ? "Read" : "Not Read"}</button>
                 <button class="delete">Delete</button>
@@ -39,6 +39,12 @@ function displayBook() {
 
 function validateForm(input) {
     return input.checkValidity();
+}
+
+function capitalize(string) {
+    return string.split(" ").length >= 2 
+    ? string.split(" ").map(text => text[0].toUpperCase() + text.slice(1).toLowerCase()).join(" ")
+    : string[0].toUpperCase() + string.slice(1).toLowerCase();
 }
 
 function getBookInfo(event) {
