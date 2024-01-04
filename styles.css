@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Volkhov&display=swap');
 
 body {
-    font-family: 'Volkhov', serif;
+    font-family: 'Nanum Gothic', sans-serif;
     background-color: #FBF9F1;
     margin: 0;
 }
 
 .header {
+    font-family: 'Volkhov', serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +33,6 @@ img {
 }
 
 #add-book {
-    font-family: 'Nanum Gothic', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     color: #000000;
