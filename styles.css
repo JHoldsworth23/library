@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Volkhov&display=swap');
+
+body {
+    font-family: 'Volkhov', serif;
+    background-color: #FBF9F1;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #E5E1DA;
+    padding: 15px;
+    font-size: 1.6rem;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
