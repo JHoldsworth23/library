@@ -76,7 +76,7 @@ form {
     align-items: center;
 }
 
-input {
+input:not(input:last-child) {
     font-size: 1.4rem;
     width: 70%;
     border: 2px solid #4e4c4c;
