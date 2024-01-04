@@ -12,10 +12,10 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-function displayBook(libraryArray) {
-    if (libraryArray.length !== 0) {
-        grid.innerHTML = '';
-        libraryArray.forEach(book => {
+function displayBook() {
+    grid.innerHTML = '';
+    if (myLibrary.length !== 0) {
+        myLibrary.forEach(book => {
             const div = document.createElement('div');
             div.innerHTML = `
                 <p>${book.title}</p>
@@ -23,8 +23,16 @@ function displayBook(libraryArray) {
                 <p>${book.pages} pages</p>
                 <button class="read">${book.read ? "Read" : "Not Read"}</button>
                 <button class="delete">Delete</button>
-            `;
+            `;     
             grid.appendChild(div);
+        });
+
+        const deleteBtn = document.querySelectorAll('.delete');
+        deleteBtn.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                myLibrary.splice(index, 1);
+                displayBook();
+            });
         });
     }
 }
@@ -45,7 +53,7 @@ function getBookInfo(event) {
         form.reset();
         dialog.close();
         event.preventDefault();
-        displayBook(myLibrary);
+        displayBook();
     }
 }
 
