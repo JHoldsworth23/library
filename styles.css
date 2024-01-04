@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Volkhov&display=swap');
 
 body {
     font-family: 'Volkhov', serif;
@@ -30,4 +30,21 @@ img {
     justify-content: center;
     align-items: center;
     padding-top: 40px;
+}
+
+#add-book {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E5E1DA;
+    background-color: #121faf;
+    padding: 15px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#add-book:hover {
+    color: #000000;
+    font-weight: 600;
+    background-color: #E5E1DA;
 }
