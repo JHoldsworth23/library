@@ -1,0 +1,3 @@
+Book not read - <i class="fa-solid fa-book"></i>
+Book read - <i class="fa-solid fa-book-bookmark"></i>
+Trash delete - <i class="fa-solid fa-trash"></i>
