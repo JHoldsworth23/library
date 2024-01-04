@@ -60,7 +60,9 @@ function validateForm(input) {
 
 function capitalize(string) {
     return string.split(" ").length >= 2 
-    ? string.split(" ").map(text => text[0].toUpperCase() + text.slice(1).toLowerCase()).join(" ")
+    ? string.split(" ").map(text => text.length > 1 
+        ? text[0].toUpperCase() + text.slice(1).toLowerCase() 
+        : text[0].toUpperCase()).join(" ")
     : string[0].toUpperCase() + string.slice(1).toLowerCase();
 }
 
