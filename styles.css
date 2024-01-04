@@ -35,8 +35,8 @@ img {
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #E5E1DA;
-    background-color: #121faf;
+    color: #000000;
+    background-color: #FFCA4F;
     padding: 15px 50px;
     border-radius: 50px;
     margin: 40px;
@@ -44,9 +44,9 @@ img {
 }
 
 #add-book:hover {
-    color: #000000;
+    color: whitesmoke;
     font-weight: 600;
-    background-color: #E5E1DA;
+    background-color: #121faf;
 }
 
 .grid-container {
