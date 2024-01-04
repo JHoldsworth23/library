@@ -12,6 +12,23 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
+function displayBook(libraryArray) {
+    if (libraryArray.length !== 0) {
+        grid.innerHTML = '';
+        libraryArray.forEach(book => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <p>${book.title}</p>
+                <p>${book.author}</p>
+                <p>${book.pages} pages</p>
+                <button class="read">${book.read ? "Read" : "Not Read"}</button>
+                <button class="delete">Delete</button>
+            `;
+            grid.appendChild(div);
+        });
+    }
+}
+
 function validateForm(input) {
     return input.checkValidity();
 }
@@ -28,6 +45,7 @@ function getBookInfo(event) {
         form.reset();
         dialog.close();
         event.preventDefault();
+        displayBook(myLibrary);
     }
 }
 
@@ -46,3 +64,5 @@ cancelBtn.addEventListener('click', () => {
     form.reset();
     dialog.close();
 })
+
+const grid = document.querySelector('.grid-container');
