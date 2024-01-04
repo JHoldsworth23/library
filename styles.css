@@ -49,6 +49,29 @@ img {
     background-color: #121faf;
 }
 
+dialog {
+    background-color: #E5E1DA;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-shadow: 0 0 12px #4e4c4c;
+}
+
+dialog > h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+form {
+    width: 15vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 1.3rem;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
