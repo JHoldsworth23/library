@@ -34,10 +34,10 @@ function displayBook() {
     if (myLibrary.length !== 0) {
         myLibrary.forEach(book => {
             const div = document.createElement('div');
-            div.classList.add('grid-item');
+            div.classList.add('book-card');
             div.innerHTML = `
-                <p>${book.title.toUpperCase()}</p>
-                <p>${capitalize(book.author)}</p>
+                <p class="book-title">${book.title.toUpperCase()} <br><span>by</span></p>
+                <p class="book-author">${capitalize(book.author)}</p>
                 <p>${book.pages} pages</p>
                 <div>
                     <button class="read">${book.read ? 'Read <i class="fa-solid fa-book-bookmark"></i>' : 'Not Read <i class="fa-solid fa-book"></i>'}</button>
