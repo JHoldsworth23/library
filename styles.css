@@ -217,3 +217,24 @@ i[class*="book-bookmark"] {
 i[class*="not-read"], .delete:hover {
     color: #B90E0A;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100vw;
+    font-size: 18px;
+}
+
+[class$="hub"] {
+    color: #000;
+    font-size: 24px;
+}
+
+[class$="hub"]:hover {
+    color: #B90E0A;
+}

@@ -5,6 +5,7 @@ const dialog = document.querySelector('dialog');
 const showForm = document.querySelector('#add-book');
 const cancelBtn = document.querySelector('#cancel-btn');
 const grid = document.querySelector('.grid-container');
+const copyright = document.querySelector('.copyright');
 
 submitBtn.addEventListener('click', getBookInfo);
 
@@ -100,3 +101,6 @@ function getBookInfo(event) {
         displayBook();
     }
 }
+
+const date = new Date();
+copyright.textContent = `Copyright © ${date.getFullYear()} JHoldsworth23`;
