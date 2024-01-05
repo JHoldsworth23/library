@@ -40,7 +40,7 @@ function displayBook() {
                 <p class="book-author">${capitalize(book.author)}</p>
                 <p>${book.pages} pages</p>
                 <div>
-                    <button class="read">${book.read ? 'Read <i class="fa-solid fa-book-bookmark"></i>' : 'Not Read <i class="fa-solid fa-book"></i>'}</button>
+                    <button class="read">${book.read ? '<i class="fa-solid fa-book-bookmark"></i> Read' : '<i class="fa-solid fa-book not-read"></i> Not Read'}</button>
                     <button class="delete"><i class="fa-solid fa-trash"></i></button>
                 </div>
             `;     

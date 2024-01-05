@@ -197,3 +197,23 @@ span {
     font-size: 1.25rem;
     margin: 10px 0 20px;
 }
+
+.read, .delete {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: #E5E1DA;
+}
+
+.read:hover {
+    color: #4e4c4c;
+}
+
+i[class*="book-bookmark"] {
+    color: #006400;
+}
+
+i[class*="not-read"], .delete:hover {
+    color: #B90E0A;
+}
