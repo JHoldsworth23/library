@@ -47,23 +47,30 @@ function displayBook() {
             grid.appendChild(div);
         });
 
-        const deleteBtn = document.querySelectorAll('.delete');
-        deleteBtn.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                myLibrary.splice(index, 1);
-                displayBook();
-            });
-        });
-
-        const readBtn = document.querySelectorAll('.read');
-        readBtn.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                const currentBook = myLibrary[index].read;
-                myLibrary[index].read = !currentBook;
-                displayBook();
-            });
-        });
+        deleteBook();
+        toggleBookStatus();
     }
+}
+
+function deleteBook() {
+    const deleteBtn = document.querySelectorAll('.delete');
+    deleteBtn.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            myLibrary.splice(index, 1);
+            displayBook();
+        });
+    });
+}
+
+function toggleBookStatus() {
+    const readBtn = document.querySelectorAll('.read');
+    readBtn.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            const currentBook = myLibrary[index].read;
+            myLibrary[index].read = !currentBook;
+            displayBook();
+        });
+    });
 }
 
 function validateForm(input) {
