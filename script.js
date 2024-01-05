@@ -54,6 +54,15 @@ function displayBook() {
                 displayBook();
             });
         });
+
+        const readBtn = document.querySelectorAll('.read');
+        readBtn.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                const currentBook = myLibrary[index].read;
+                myLibrary[index].read = !currentBook;
+                displayBook();
+            });
+        });
     }
 }
 
