@@ -39,8 +39,10 @@ function displayBook() {
                 <p>${book.title.toUpperCase()}</p>
                 <p>${capitalize(book.author)}</p>
                 <p>${book.pages} pages</p>
-                <button class="read">${book.read ? "Read" : "Not Read"}</button>
-                <button class="delete">Delete</button>
+                <div>
+                    <button class="read">${book.read ? 'Read <i class="fa-solid fa-book-bookmark"></i>' : 'Not Read <i class="fa-solid fa-book"></i>'}</button>
+                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                </div>
             `;     
             grid.appendChild(div);
         });
