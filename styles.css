@@ -152,22 +152,48 @@ button[id*="cancel"]:hover {
 }
 
 .grid-container > div {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: auto;
     background-color: #E5E1DA;
     border-radius: 16px;
     box-shadow: 0 0 8px #4e4c4c;
 }
 
-.grid-item {
+.book-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
+    padding: 16px;
 }
 
-.grid-item > div {
+.book-card > div {
+    align-items: flex-end;
     width: 80%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.book-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin: 12px 0 0;
+}
+
+span {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.book-author {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+}
+
+.book-author + p {
+    font-size: 1.25rem;
+    margin: 10px 0 20px;
 }
