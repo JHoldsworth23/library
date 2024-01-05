@@ -104,6 +104,7 @@ input[type="checkbox"] {
     border: 2px solid #000000;
     border-radius: 12px;
     margin: 2px 10px 0;
+    cursor: pointer;
 }
 
 input[type="checkbox"]::before {
@@ -128,9 +129,20 @@ form > div:last-child {
 
 button[id*="btn"] {
     font-size: 0.9rem;
+    font-weight: bold;
     padding: 6px 12px;
     border: none;
     border-radius: 16px;
+    cursor: pointer;
+}
+
+button[id*="submit"]:hover {
+    background-color: #FFCA4F;
+}
+
+button[id*="cancel"]:hover {
+    color: #FEFEFE;
+    background-color: #B90E0A;
 }
 
 .grid-container {
