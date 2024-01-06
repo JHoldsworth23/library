@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Volkhov&display=swap');
 
+:root {
+    --primary-color: #E5E1DA;
+    --dark-gray: #4e4c4c;
+}
+
 body {
     font-family: 'Nanum Gothic', sans-serif;
     background-color: #FBF9F1;
@@ -13,8 +18,7 @@ body {
     align-items: center;
     gap: 20px;
     box-shadow: 0 0 8px #000000;
-
-    background-color: #E5E1DA;
+    background-color: var(--primary-color);
     padding: 10px;
     letter-spacing: 2px;
     font-size: 1.6rem;
@@ -35,7 +39,6 @@ img {
 #add-book {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #000000;
     background-color: #FFCA4F;
     padding: 15px 50px;
     border-radius: 50px;
@@ -50,10 +53,10 @@ img {
 }
 
 dialog {
-    background-color: #E5E1DA;
-    border: 1px solid #4e4c4c;
+    background-color: var(--primary-color);
+    border: 1px solid var(--dark-gray);
     border-radius: 20px;
-    box-shadow: 0 0 12px #4e4c4c;
+    box-shadow: 0 0 12px var(--dark-gray);
 }
 
 dialog[open]::backdrop {
@@ -79,7 +82,7 @@ form {
 input:not(input:last-child) {
     font-size: 1.4rem;
     width: 70%;
-    border: 2px solid #4e4c4c;
+    border: 2px solid var(--dark-gray);
     padding: 4px 8px;
     border-radius: 8px;
     margin: 8px;
@@ -125,6 +128,7 @@ input[type="checkbox"]:checked::before {
 
 form > div:last-child {
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 button[id*="btn"] {
@@ -154,9 +158,9 @@ button[id*="cancel"]:hover {
 .grid-container > div {
     width: 250px;
     height: auto;
-    background-color: #E5E1DA;
+    background-color: var(--primary-color);
     border-radius: 16px;
-    box-shadow: 0 0 8px #4e4c4c;
+    box-shadow: 0 0 8px var(--dark-gray);
 }
 
 .book-card {
@@ -203,18 +207,18 @@ span {
     font-weight: bold;
     cursor: pointer;
     border: none;
-    background-color: #E5E1DA;
+    background-color: var(--primary-color);
 }
 
 .read:hover {
-    color: #4e4c4c;
+    color: var(--dark-gray);
 }
 
 i[class*="book-bookmark"] {
     color: #006400;
 }
 
-i[class*="not-read"], .delete:hover {
+i[class*="not-read"], .delete:hover, [class$="hub"]:hover {
     color: #B90E0A;
 }
 
@@ -233,8 +237,4 @@ i[class*="not-read"], .delete:hover {
 [class$="hub"] {
     color: #000;
     font-size: 24px;
-}
-
-[class$="hub"]:hover {
-    color: #B90E0A;
 }
