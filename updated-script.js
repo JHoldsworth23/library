@@ -15,11 +15,24 @@ class Library {
 
     addBookToLibrary(newBook) {
         this.myLibrary.push(newBook);
+        console.log(this.myLibrary);
     }
 }
 
-const book = new Book('Dune', 'Frank Herbert', '452', true);
 const library = new Library();
 
-library.addBookToLibrary(book);
-console.log(library.myLibrary);
+const getBookInfo = () => {
+    const bookTitle = document.querySelector('#title').value;
+    const bookAuthor = document.querySelector('#author').value;
+    const bookPages = document.querySelector('#pages').value;
+    const bookRead = document.querySelector('input[type*="box"]').checked;
+
+    return new Book(bookTitle, bookAuthor, bookPages, bookRead);
+}
+
+const addBook = (event) => {
+    event.preventDefault();
+    const newBook = getBookInfo();
+    library.addBookToLibrary(newBook);
+}
+
