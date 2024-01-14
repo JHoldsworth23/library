@@ -7,3 +7,19 @@ class Book {
         this.read = read;
     }
 }
+
+class Library {
+    constructor() {
+        this.myLibrary = [];
+    }
+
+    addBookToLibrary(newBook) {
+        this.myLibrary.push(newBook);
+    }
+}
+
+const book = new Book('Dune', 'Frank Herbert', '452', true);
+const library = new Library();
+
+library.addBookToLibrary(book);
+console.log(library.myLibrary);
