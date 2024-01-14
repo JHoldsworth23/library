@@ -15,7 +15,6 @@ class Library {
 
     addBookToLibrary(newBook) {
         this.myLibrary.push(newBook);
-        console.log(this.myLibrary);
     }
 }
 
@@ -40,4 +39,17 @@ const addBook = (event) => {
     event.preventDefault();
     const newBook = getBookInfo();
     library.addBookToLibrary(newBook);
+    form.reset();
+    dialog.close();
 }
+
+showForm.addEventListener('click', () => {
+    dialog.showModal();
+})
+
+submitBtn.addEventListener('click', addBook);
+
+cancelBtn.addEventListener('click', () => {
+    form.reset();
+    dialog.close();
+})
