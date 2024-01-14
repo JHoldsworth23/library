@@ -17,8 +17,18 @@ class Library {
         this.myLibrary.push(newBook);
     }
 
-    displayBooks(panel) {
-        panel.innerHTML = '';
+    removeBook() {
+        const deleteBtn = document.querySelectorAll('.delete');
+        deleteBtn.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                this.myLibrary.splice(index, 1);
+                this.displayBooks();
+            })
+        })
+    }
+
+    displayBooks() {
+        grid.innerHTML = '';
         if (this.myLibrary.length !== 0) {
             this.myLibrary.forEach(book => {
                const div = document.createElement('div');
@@ -32,8 +42,10 @@ class Library {
                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
                    </div> 
                `;
-               panel.append(div);
+               grid.append(div);
             });
+
+            this.removeBook();
         }
     }
 }
@@ -74,4 +86,4 @@ submitBtn.addEventListener('click', addBook);
 cancelBtn.addEventListener('click', () => {
     form.reset();
     dialog.close();
-})
+});
