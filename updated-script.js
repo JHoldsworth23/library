@@ -21,6 +21,12 @@ class Library {
 
 const library = new Library();
 
+const showForm = document.querySelector('#add-book');
+const form = document.querySelector('form');
+const dialog = document.querySelector('dialog');
+const submitBtn = document.querySelector('#submit-btn');
+const cancelBtn = document.querySelector('#cancel-btn');
+
 const getBookInfo = () => {
     const bookTitle = document.querySelector('#title').value;
     const bookAuthor = document.querySelector('#author').value;
@@ -35,4 +41,3 @@ const addBook = (event) => {
     const newBook = getBookInfo();
     library.addBookToLibrary(newBook);
 }
-
