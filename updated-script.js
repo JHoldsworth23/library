@@ -1,10 +1,9 @@
-// Rewrite these code with the use of Class
 class Book {
     constructor(title, author, pages, read) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.read = read;
+        this.title = title === "" ? 'Unknown' : title;
+        this.author = author === "" ? 'Unknown' : author;
+        this.pages = pages === '' ? '0' : pages;
+        this.read = read === '' ? false : read;
     }
 }
 
