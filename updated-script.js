@@ -1,6 +1,6 @@
 // Rewrite these code with the use of Class
 class Book {
-    constructor({ title = 'Unknown', author = 'Unknown', pages = '0', read = false }) {
+    constructor(title, author, pages, read) {
         this.title = title;
         this.author = author;
         this.pages = pages;
@@ -27,6 +27,17 @@ class Library {
         })
     }
 
+    toggleStatus() {
+        const readBtn = document.querySelectorAll('.read');
+        readBtn.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                const currentBook = this.myLibrary[index].read;
+                this.myLibrary[index].read = !currentBook;
+                this.displayBooks();
+            });
+        });
+    }
+ 
     displayBooks() {
         grid.innerHTML = '';
         if (this.myLibrary.length !== 0) {
@@ -46,6 +57,7 @@ class Library {
             });
 
             this.removeBook();
+            this.toggleStatus();
         }
     }
 }
