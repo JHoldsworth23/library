@@ -37,6 +37,14 @@ class Library {
             });
         });
     }
+
+    capitalize(string) {
+        return string.split(" ").length >= 2 
+        ? string.split(" ").map(text => text.length > 1 
+            ? text[0].toUpperCase() + text.slice(1).toLowerCase() 
+            : text[0].toUpperCase()).join(" ")
+        : string[0].toUpperCase() + string.slice(1).toLowerCase();
+    }
  
     displayBooks() {
         grid.innerHTML = '';
@@ -46,7 +54,7 @@ class Library {
                div.classList.add('book-card');
                div.innerHTML =  `
                    <p class="book-title">${book.title.toUpperCase()} <br><span>by</span></p>
-                   <p class="book-author">${book.author}</p>
+                   <p class="book-author">${this.capitalize(book.author)}</p>
                    <p>${book.pages} pages</p>
                    <div>
                        <button class="read">${book.read ? '<i class="fa-solid fa-book-bookmark"></i> Read' : '<i class="fa-solid fa-book not-read"></i> Not Read'}</button>
