@@ -85,7 +85,6 @@ input:not(input:last-child) {
     width: 70%;
     border: 2px solid var(--dark-gray);
     padding: 4px 8px;
-    border-radius: 8px;
     margin: 8px;
 }
 
@@ -125,6 +124,22 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
     visibility: visible;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    font-size: calc(var(--root-em) - 0.1rem);
+    font-weight: bold;
+    width: 77%;
+    text-align: center;
+    padding: 4px 2px 6px;
+    border-radius: 0 0 6px 6px;
+    margin: -8px 0 0;
+    background-color: #B90E0A;
+    color: #E5E1DA;
 }
 
 form > div:last-child {
