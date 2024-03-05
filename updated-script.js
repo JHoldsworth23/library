@@ -1,9 +1,9 @@
 class Book {
     constructor(title, author, pages, read) {
-        this.title = title === "" ? 'Unknown' : title;
-        this.author = author === "" ? 'Unknown' : author;
-        this.pages = pages === '' ? '0' : pages;
-        this.read = read === '' ? false : read;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
 }
 
@@ -79,21 +79,55 @@ const cancelBtn = document.querySelector('#cancel-btn');
 const grid = document.querySelector('.grid-container');
 
 const getBookInfo = () => {
-    const bookTitle = document.querySelector('#title').value;
-    const bookAuthor = document.querySelector('#author').value;
-    const bookPages = document.querySelector('#pages').value;
-    const bookRead = document.querySelector('input[type*="box"]').checked;
+    const bookTitleInput = document.querySelector('#title');
+    const titleError = document.querySelector('#title + span');
+    const bookAuthorInput = document.querySelector('#author');
+    const authorError = document.querySelector('#author + span');
+    const bookPagesInput = document.querySelector('#pages');
+    const pageError = document.querySelector('#pages + span');
+    const bookRead = document.querySelector('input[type*="box"]').value;
 
-    return new Book(bookTitle, bookAuthor, bookPages, bookRead);
+    if ( bookTitleInput.validity.valueMissing ) {
+        titleError.textContent = 'You need to add the book title';
+    } else {
+        titleError.textContent = '';
+    }
+
+    if ( bookAuthorInput.validity.valueMissing ) {
+        authorError.textContent = "You need to add the author's name";
+    } else {
+        authorError.textContent = '';
+    }
+
+    if ( bookAuthorInput.validity.valueMissing ) {
+        authorError.textContent = "You need to add the author's name";
+    } else {
+        authorError.textContent = '';
+    }
+
+    if ( bookPagesInput.validity.valueMissing ) {
+        pageError.textContent = 'You need to add the value for book pages';
+    } else if ( bookPagesInput.validity.rangeOverflow ) {
+        pageError.textContent = 'Book pages need to be under 2001';
+    } else if ( bookPagesInput.validity.rangeUnderflow ) {
+        pageError.textContent = 'Book pages need to be over 1';
+    } else {
+        pageError.textContent = '';
+    }
+
+    return new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, bookRead);
 }
 
 const addBook = (event) => {
     event.preventDefault();
+    const form = document.querySelector('form');
     const newBook = getBookInfo();
-    library.addBookToLibrary(newBook);
-    form.reset();
-    dialog.close();
-    library.displayBooks(grid);
+    if (form.checkValidity()) {
+        library.addBookToLibrary(newBook);
+        form.reset();
+        dialog.close();
+        library.displayBooks(grid);
+    }
 }
 
 showForm.addEventListener('click', () => {
