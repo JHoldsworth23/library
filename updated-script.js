@@ -85,33 +85,43 @@ const getBookInfo = () => {
     const authorError = document.querySelector('#author + span');
     const bookPagesInput = document.querySelector('#pages');
     const pageError = document.querySelector('#pages + span');
-    const bookRead = document.querySelector('input[type*="box"]').value;
+    const bookRead = document.querySelector('input[type*="box"]').checked;
 
     if ( bookTitleInput.validity.valueMissing ) {
+        bookTitleInput.classList.add('invalid');
+        titleError.classList.remove('hidden');
         titleError.textContent = 'You need to add the book title';
     } else {
+        bookTitleInput.classList.remove('invalid');
+        titleError.classList.add('hidden');
         titleError.textContent = '';
     }
 
     if ( bookAuthorInput.validity.valueMissing ) {
+        bookAuthorInput.classList.add('invalid');
+        authorError.classList.remove('hidden');
         authorError.textContent = "You need to add the author's name";
     } else {
-        authorError.textContent = '';
-    }
-
-    if ( bookAuthorInput.validity.valueMissing ) {
-        authorError.textContent = "You need to add the author's name";
-    } else {
+        bookAuthorInput.classList.remove('invalid');
+        authorError.classList.add('hidden');
         authorError.textContent = '';
     }
 
     if ( bookPagesInput.validity.valueMissing ) {
+        bookPagesInput.classList.add('invalid');
+        pageError.classList.remove('hidden');
         pageError.textContent = 'You need to add the value for book pages';
     } else if ( bookPagesInput.validity.rangeOverflow ) {
+        bookPagesInput.classList.add('invalid');
+        pageError.classList.remove('hidden');
         pageError.textContent = 'Book pages need to be under 2001';
     } else if ( bookPagesInput.validity.rangeUnderflow ) {
+        bookPagesInput.classList.add('invalid');
+        pageError.classList.remove('hidden');
         pageError.textContent = 'Book pages need to be over 1';
     } else {
+        bookPagesInput.classList.remove('invalid');
+        pageError.classList.add('hidden');
         pageError.textContent = '';
     }
 
@@ -130,6 +140,13 @@ const addBook = (event) => {
     }
 }
 
+const hideError = () => {
+    const errorSpans = document.querySelectorAll('.error');
+    errorSpans.forEach(error => {
+        error.classList.add('hidden');
+    })
+}
+
 showForm.addEventListener('click', () => {
     dialog.showModal();
 })
@@ -138,6 +155,7 @@ submitBtn.addEventListener('click', addBook);
 
 cancelBtn.addEventListener('click', () => {
     form.reset();
+    hideError();
     dialog.close();
 });
 
